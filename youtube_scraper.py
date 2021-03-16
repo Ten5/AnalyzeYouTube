@@ -1,5 +1,3 @@
-# Reference https://www.analyticsvidhya.com/blog/2019/05/scraping-classifying-youtube-video-data-python-selenium/#:~:text=Keep%20in%20mind%20though%2C%20web,videos%20based%20on%20specific%20categories.
-
 from selenium import webdriver 
 import pandas as pd 
 from selenium.webdriver.common.by import By 

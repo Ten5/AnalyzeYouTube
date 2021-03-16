@@ -1,0 +1,6 @@
+Websites:
+
+https://www.analyticsvidhya.com/blog/2019/05/scraping-classifying-youtube-video-data-python-selenium/#:~:text=Keep%20in%20mind%20though%2C%20web,videos%20based%20on%20specific%20categories
+https://www.thepythoncode.com/article/get-youtube-data-python
+https://www.bestproxyreviews.com/youtube-scraper/
+https://towardsdatascience.com/how-to-scrape-youtube-comments-with-python-61ff197115d4
