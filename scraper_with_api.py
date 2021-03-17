@@ -131,11 +131,11 @@ print_video_infos(response)
 ############## Output ##############
 ####################################
 # Title: Me at the zoo
-# Description: The first video on YouTube. Maybe it's time to go back to the zoo?
+# Description: The first video on YouTube. I'm currently working on Part 2. While you wait, click here: https://www.youtube.com/watch?v=xed4d7-OauM
 # Channel Title: jawed
 # Publish time: 2005-04-24T03:31:52Z
 # Duration: 19
-# Number of comments: 11018071
-# Number of likes: 5962957
-# Number of dislikes: 153444
-# Number of views: 138108884
+# Number of comments: 11177107
+# Number of likes: 7287137
+# Number of dislikes: 179429
+# Number of views: 157662277
