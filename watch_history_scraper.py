@@ -95,7 +95,7 @@ def getArtistStats(data: list) -> dict:
 
 	return artistFrequencyMap
 
-def sortDataByArtist(data: list) -> filter:
+def sortDataByArtist(data: list) -> dict:
 	data.sort(key = (lambda x: x.header))
 	return getArtistStats(data)
 
@@ -105,11 +105,31 @@ def filterYtMusicData(data: list) -> list:
 def filterYtData(data: list) -> list:
 	return list(filter(lambda element: element.header == 'YouTube', data))
 
+def getSongFrequency(data: list) -> dict:
+
+	# ytSongFrequency => Song : Count
+	ytSongFrequency = {}
+
+	# orderedSongFreqMap => Decreasing Order (Song : Frequency)
+	orderedSongFreqMap = {}
+
+	for element in data:
+		key = element.title.replace('Watched ', '')
+		value = ytSongFrequency.setdefault(key, 0)
+		ytSongFrequency[key] += 1
+
+	# Sorts the keys on the basis of the values and returns a list of keys in a sorted manner
+	for element in sorted(ytSongFrequency, key = lambda count: ytSongFrequency[count], reverse = True):
+		orderedSongFreqMap.update({element : ytSongFrequency[element]})	
+
+	return orderedSongFreqMap
+
 
 def main() -> None:
-	inFile = './watch_history.json'
+	inFile = './watch-history.json'
 	ytMusicStatsFile = './youtube_history_stats.txt'
 	artistStatsFile = './ytMusicStats.txt'
+	songsStatsFile = './ytSongStats.txt'
 
 	fileData = Utilities.readFile(inFile)
 	parsedData = parseFile(fileData)
@@ -123,8 +143,10 @@ def main() -> None:
 	print('Youtube Rest: ' + str(filteredYtRest))
 
 	artistData = sortDataByArtist(filteredYtMusicData)
+	songsData = getSongFrequency(filteredYtMusicData)
 	
 	Utilities.writeToFile(artistStatsFile, artistData)
+	Utilities.writeToFile(songsStatsFile, songsData)
 	Utilities.writeToFile(ytMusicStatsFile, Utilities.toPrintableMap(parsedData))
 
 
